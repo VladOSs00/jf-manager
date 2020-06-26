@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.2-internal"
+      fx:controller="com.FileManager.java.file.manager.Controller">
+    <MenuBar>
+        <Menu text="Файл">
+            <MenuItem text="Новая вкладка" onAction="#btnOnNew"/>
+            <MenuItem text="Обновить" onAction="#btnRefresf"/>
+            <MenuItem text="Выйти из программы" onAction="#btnExitAction"/>
+        </Menu>
+        <Menu text="Запуск...">
+            <Menu text="Windows...">
+                <MenuItem text="Блокнот" onAction="#btnNotepad" />
+                <MenuItem text="Internet Explorer" onAction="#btnIE" />
+                <MenuItem text="Paint" onAction="#btnPaint" />
+            </Menu>
+            <Menu text="MacOS...">
+                <MenuItem text="Safari" onAction="#btnSafari" />
+                <MenuItem text="TextEdit" onAction="#btnTextEdit" />
+                <MenuItem text="Калькулятор" onAction="#btnCalculator" />
+            </Menu>
+            <Menu text="Linux...">
+                <MenuItem text="LibreOffice" onAction="#btnLibreOffice" />
+            </Menu>
+        </Menu>
+
+        <Menu text="Создание">
+            <Menu text="Создать">
+                <MenuItem text="Папку" onAction="#btnCreateFolders"/>
+                <MenuItem text="Файл" onAction="#btnCreateFiles" />
+            </Menu>
+        </Menu>
+
+    </MenuBar>
+
+
+
+    <HBox VBox.vgrow="ALWAYS">
+        <fx:include fx:id="leftPanel" source="panel.fxml" HBox.hgrow="ALWAYS" />
+        <fx:include fx:id="rightPanel" source="panel.fxml" HBox.hgrow="ALWAYS" />
+    </HBox>
+
+    <HBox spacing="5">
+        <Button maxWidth="Infinity" focusTraversable="false" text="Копировать файл" HBox.hgrow="ALWAYS" onAction="#copyBtnAction"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Переместить файл" HBox.hgrow="ALWAYS" onAction="#moveBtnAction"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Удалить файл" HBox.hgrow="ALWAYS" onAction="#deleteBtnAction"/>
+        <Button maxWidth="Infinity" focusTraversable="false" text="Выход из программы" HBox.hgrow="ALWAYS" onAction="#btnExitAction"/>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+    </HBox>
+</VBox>
